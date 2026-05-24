@@ -2,7 +2,7 @@
 Training-free universal ultrasound segmentation (Medical Image Analysis)
 **Medical Image Analysis** | Under Review
 
-[Haobo Ling](mailto:chenfang_bme@163.com), Lingyu Chen, Jia Rui Han, Haoxuan Zhang, Yue Wang, Shenghai Xin, Yufei Zhao, Fang Chen*
+Haobo Ling, Lingyu Chen, Jia Rui Han, Haoxuan Zhang, Yue Wang, Shenghai Xin, Yufei Zhao, Fang Chen*
 
 ---
 ## Overview
