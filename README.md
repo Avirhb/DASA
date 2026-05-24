@@ -22,6 +22,10 @@ The two pathways are fused through **Orthogonal Joint Verification (OJV)**, and 
 
 We also introduce **UUSeg-Bench**, the first large-scale benchmark for universal ultrasound segmentation:
 - 14 datasets | 8 anatomical regions | 9,764 labeled frames | 10 countries
+## Code
+
+> **The full source code is being organized and will be released upon paper acceptance.**  
+> Please star/watch this repository to be notified when the code is available.
 
 ---
 ## Contact
