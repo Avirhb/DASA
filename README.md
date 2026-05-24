@@ -15,7 +15,7 @@ It integrates two complementary pathways:
 
 The two pathways are fused through **Orthogonal Joint Verification (OJV)**, and the result prompts a frozen SAM for final segmentation — with no parameter updates or gradient backpropagation.
 
-![Pipeline Overview](assets/overview.png)
+![Pipeline Overview](assets/overview.jng)
 
 ---
 ## UUSeg-Bench
