@@ -1,5 +1,5 @@
 # DASA
-Training-free universal ultrasound segmentation (Medical Image Analysis)
+### Can Universal Ultrasound Segmentation Be Training-Free? A Dual-Pathway Semantic Anchoring Framework
 **Medical Image Analysis** | Under Review
 
 Haobo Ling, Lingyu Chen, Jia Rui Han, Haoxuan Zhang, Yue Wang, Shenghai Xin, Yufei Zhao, Fang Chen*
