@@ -1,0 +1,32 @@
+{
+  "paths_config": "paths.json",
+  "output_dir": "../outputs/task_learning",
+  "manifest_dir": "../data/task_manifests",
+  "swin_config": "swin_tiny.json",
+  "device": "cuda",
+  "seed": 42,
+  "num_workers": 2,
+  "torch_threads": 1,
+  "smoke_steps": 1,
+  "training": {
+    "base_lr": 0.01,
+    "batch_size": 8,
+    "consistency": 0.1,
+    "consistency_rampup": 200.0,
+    "image_size": 224,
+    "iterations": 5000,
+    "labeled_bs": 4,
+    "mask_threshold": 128,
+    "num_classes": 2,
+    "momentum": 0.9,
+    "weight_decay": 0.0001,
+    "lr_power": 0.9,
+    "ramp_interval": 150,
+    "abd_supervised_weight": 2,
+    "supervised_mix": 0.5,
+    "abd_patch_size": 56,
+    "abd_grid_size": 4,
+    "abd_top_num": 4,
+    "log_interval": 100
+  }
+}

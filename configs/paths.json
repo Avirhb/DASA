@@ -1,0 +1,30 @@
+{
+  "abd_root": "../external/ABD",
+  "asset_roots": {
+    "clinician": "../data/reader_study/clinician",
+    "private": "../data/reader_study/private",
+    "datasets": "../data/processed_datasets"
+  },
+  "data_root": "../data/processed_datasets",
+  "dataset_directories": {
+    "HE_BAO": {
+      "images": "../data/processed_datasets/HE_SOTA/main_he_views/HE_BAO/images",
+      "masks": "../data/processed_datasets/HE_SOTA/main_he_views/HE_BAO/masks"
+    },
+    "HE_GAN": {
+      "images": "../data/processed_datasets/HE_SOTA/main_he_views/HE_GAN/images",
+      "masks": "../data/processed_datasets/HE_SOTA/main_he_views/HE_GAN/masks"
+    },
+    "HE_PAO": {
+      "images": "../data/processed_datasets/HE_SOTA/pao_xing_yan_dong_zheng_merged/images",
+      "masks": "../data/processed_datasets/HE_SOTA/pao_xing_yan_dong_zheng_merged/masks"
+    },
+    "HE_SHI": {
+      "images": "../data/processed_datasets/HE_SOTA/main_he_views/HE_SHI/images",
+      "masks": "../data/processed_datasets/HE_SOTA/main_he_views/HE_SHI/masks"
+    }
+  },
+  "dinov3_model": "../weights/dinov3-vitl16",
+  "sam_checkpoint": "../weights/sam_vit_h_4b8939.pth",
+  "swin_checkpoint": "../weights/swin_tiny_patch4_window7_224.pth"
+}

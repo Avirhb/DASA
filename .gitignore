@@ -216,3 +216,12 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Local data, models, and run outputs
+/data/
+/weights/
+/outputs/
+/external/
+*.pth
+*.pt
+*.ckpt

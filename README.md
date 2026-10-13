@@ -1,33 +1,55 @@
 # DASA
-### Can Universal Ultrasound Segmentation Be Training-Free? A Dual-Pathway Semantic Anchoring Framework
-**Medical Image Analysis** | Under Review
 
-Haobo Ling, Lingyu Chen, Jia Rui Han, Haoxuan Zhang, Yue Wang, Shenghai Xin, Yufei Zhao, Fang Chen*
+**Training-free ultrasound segmentation for one-shot-initiated task learning**
 
----
-## Overview
+DASA segments ultrasound images from one annotated reference using frozen DINOv3
+and SAM. The resulting masks can be reviewed and used for one-shot-initiated task
+learning (OITL).
 
-DASA is a **training-free** framework for universal ultrasound image segmentation. 
-It integrates two complementary pathways:
+![Study overview](assets/overview.png)
 
-- **SSP (Static Semantic Pathway)**: Few-shot visual prototype matching with contrastive background suppression.
-- **TTBA (Test-Time Background Anchoring)**: Extracts an in-situ background representation from each test image and infers foreground through feature dissimilarity.
+## Setup
 
-The two pathways are fused through **Orthogonal Joint Verification (OJV)**, and the result prompts a frozen SAM for final segmentation — with no parameter updates or gradient backpropagation.
+Use Python 3.11 with CUDA for GPU runs.
 
-![Pipeline Overview](overview.jpg)
+```bash
+pip install -r requirements.txt
+```
 
----
-## UUSeg-Bench
+Prepare your datasets and DINOv3 ViT-L/16, SAM ViT-H, and Swin-T weights, then edit
+`configs/paths.json`. Paths are relative to the config file. For evaluation, place
+images and same-name masks in `data/processed_datasets/<DATASET>/{images,masks}/`.
 
-We also introduce **UUSeg-Bench**, the first large-scale benchmark for universal ultrasound segmentation:
-- 14 datasets | 8 anatomical regions | 9,764 labeled frames | 10 countries
-## Code
+## One-shot segmentation
 
-> **The full source code is being organized and will be released upon paper acceptance.**  
-> Please star/watch this repository to be notified when the code is available.
+```bash
+python infer.py --dataset HC18
+python infer.py --config configs/igfs.json --dataset HC18
+```
 
----
-## Contact
+These run the PBAS (default) and IGFS variants. Each run selects one reference and
+evaluates the remaining images. Settings are in `configs/`; predictions and
+metrics are saved under `outputs/`. Use a new output directory for each run.
 
-For questions, please contact: **chenfang_bme@163.com**
+## OITL
+
+Set up [ABD](https://github.com/Star-chy/ABD/tree/4efd525e052c6e3601c29c1abaa4648de81cf206)
+and set `abd_root` in `configs/paths.json`. Set `manifest_dir` in
+`configs/task_learning.json` to your `labeled_manifest.csv`,
+`unlabeled_manifest.csv`, and `test_manifest.csv` folder.
+
+```bash
+python train.py
+```
+
+Manifest columns: `image_id`, `case_id`, `source_group_id`, `image_path`,
+`mask_path`, `label_source`, `accept_rank`. Use `one_shot_support_gt` for the
+reference and `frozen_dasa` for accepted masks; leave unlabeled mask paths empty.
+
+## License
+
+The core implementation is [Apache-2.0](LICENSE-CODE). Previously released
+repository material retains its [MIT license](LICENSE); bundled SAM retains its
+[original license](third_party/segment_anything/LICENSE).
+
+Contact: chenfang_bme@163.com

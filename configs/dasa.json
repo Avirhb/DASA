@@ -1,0 +1,233 @@
+{
+  "paths_config": "paths.json",
+  "output_dir": "../outputs/dasa",
+  "models": {
+    "sam_type": "vit_h",
+    "device": "auto",
+    "dtype": "auto",
+    "local_files_only": true,
+    "trust_remote_code": true
+  },
+  "algorithm": {
+    "input_size": 512,
+    "top_k": 1,
+    "contrast_alpha": 0.7,
+    "semantic_bg_k": 5,
+    "kmeans_seed": 20260722,
+    "kmeans_iterations": 10,
+    "mask_threshold": 128,
+    "support_dilation_kernel": 5,
+    "normalization_mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "normalization_std": [
+      0.229,
+      0.224,
+      0.225
+    ],
+    "smooth_width_ratio": 0.12,
+    "pos_map_center": 0.75,
+    "vertical_slope": 20,
+    "darkness_exponent": 1.2,
+    "min_point_pixels": 10,
+    "point_percentile": 85,
+    "point_sigma_ratio": 0.25,
+    "component_keep_ratio": 0.1,
+    "clean_direction_kernel": 17,
+    "clean_smooth_kernel": 5,
+    "anchor_ratio": 0.85,
+    "anchor_concentration": 0.85,
+    "anchor_min_pixels": 100,
+    "candidate_ratio": 0.3,
+    "candidate_min_pixels": 50,
+    "candidate_core_ratio": 0.8
+  },
+  "datasets": {
+    "BUSI": {
+      "parameters": {
+        "background_margin_ratio": 0.05,
+        "bbox_core_ratio": 0.6,
+        "bbox_padding": 10,
+        "bbox_safe_ratio": 0.3,
+        "num_point_prompts": 8
+      },
+      "post_processing": {}
+    },
+    "CCAUI": {
+      "parameters": {
+        "background_margin_ratio": 0.2,
+        "bbox_core_ratio": 0.8,
+        "bbox_padding": 10,
+        "bbox_safe_ratio": 0.5,
+        "num_point_prompts": 8
+      },
+      "post_processing": {}
+    },
+    "CAMUS": {
+      "parameters": {
+        "background_margin_ratio": 0.15,
+        "bbox_core_ratio": 0.6,
+        "bbox_padding": 10,
+        "bbox_safe_ratio": 0.3,
+        "num_point_prompts": 8
+      },
+      "post_processing": {
+        "pos_map_center": 0.9
+      }
+    },
+    "DDTI": {
+      "parameters": {
+        "background_margin_ratio": 0.15,
+        "bbox_core_ratio": 0.6,
+        "bbox_padding": 0,
+        "bbox_safe_ratio": 0.3,
+        "num_point_prompts": 1
+      },
+      "post_processing": {}
+    },
+    "HC18": {
+      "parameters": {
+        "background_margin_ratio": 0.15,
+        "bbox_core_ratio": 0.8,
+        "bbox_padding": 10,
+        "bbox_safe_ratio": 0.4,
+        "num_point_prompts": 8
+      },
+      "post_processing": {
+        "pos_map_center": 0.9
+      }
+    },
+    "LUMINOUS": {
+      "parameters": {
+        "background_margin_ratio": 0.15,
+        "bbox_core_ratio": 0.5,
+        "bbox_padding": 0,
+        "bbox_safe_ratio": 0.4,
+        "num_point_prompts": 8
+      },
+      "post_processing": {}
+    },
+    "MMOTU": {
+      "parameters": {
+        "background_margin_ratio": 0.2,
+        "bbox_core_ratio": 0.8,
+        "bbox_padding": 0,
+        "bbox_safe_ratio": 0.2,
+        "num_point_prompts": 8
+      },
+      "post_processing": {}
+    },
+    "BUSBRA": {
+      "parameters": {
+        "background_margin_ratio": 0.15,
+        "bbox_core_ratio": 0.6,
+        "bbox_padding": 10,
+        "bbox_safe_ratio": 0.3,
+        "num_point_prompts": 8
+      },
+      "post_processing": {}
+    },
+    "BUSC": {
+      "parameters": {
+        "background_margin_ratio": 0.15,
+        "bbox_core_ratio": 0.6,
+        "bbox_padding": 0,
+        "bbox_safe_ratio": 0.3,
+        "num_point_prompts": 3
+      },
+      "post_processing": {}
+    },
+    "BUS-UCLM": {
+      "parameters": {
+        "background_margin_ratio": 0.2,
+        "bbox_core_ratio": 0.6,
+        "bbox_padding": 0,
+        "bbox_safe_ratio": 0.3,
+        "num_point_prompts": 8
+      },
+      "post_processing": {}
+    },
+    "TN3K": {
+      "parameters": {
+        "background_margin_ratio": 0.15,
+        "bbox_core_ratio": 0.6,
+        "bbox_padding": 10,
+        "bbox_safe_ratio": 0.3,
+        "num_point_prompts": 8
+      },
+      "post_processing": {}
+    },
+    "TUD": {
+      "parameters": {
+        "background_margin_ratio": 0.05,
+        "bbox_core_ratio": 0.9,
+        "bbox_padding": 20,
+        "bbox_safe_ratio": 0.3,
+        "num_point_prompts": 8
+      },
+      "post_processing": {}
+    },
+    "UDIAT": {
+      "parameters": {
+        "background_margin_ratio": 0.2,
+        "bbox_core_ratio": 0.6,
+        "bbox_padding": 0,
+        "bbox_safe_ratio": 0.3,
+        "num_point_prompts": 8
+      },
+      "post_processing": {}
+    },
+    "HE_BAO": {
+      "parameters": {
+        "background_margin_ratio": 0.15,
+        "bbox_core_ratio": 0.6,
+        "bbox_padding": 0,
+        "bbox_safe_ratio": 0.5,
+        "num_point_prompts": 8
+      },
+      "post_processing": {}
+    },
+    "HE_GAN": {
+      "parameters": {
+        "background_margin_ratio": 0.15,
+        "bbox_core_ratio": 0.5,
+        "bbox_padding": 0,
+        "bbox_safe_ratio": 0.2,
+        "num_point_prompts": 8
+      },
+      "post_processing": {}
+    },
+    "HE_PAO": {
+      "parameters": {
+        "background_margin_ratio": 0.15,
+        "bbox_core_ratio": 0.6,
+        "bbox_padding": 0,
+        "bbox_safe_ratio": 0.5,
+        "num_point_prompts": 8
+      },
+      "post_processing": {}
+    },
+    "HE_SHI": {
+      "parameters": {
+        "background_margin_ratio": 0.15,
+        "bbox_core_ratio": 0.6,
+        "bbox_padding": 0,
+        "bbox_safe_ratio": 0.5,
+        "num_point_prompts": 8
+      },
+      "post_processing": {}
+    }
+  },
+  "execution": {
+    "save_predictions": true,
+    "max_images": null,
+    "torch_threads": 1
+  },
+  "variant": "pbas",
+  "seed": 2082365405,
+  "seed_overrides": {
+    "MMOTU": 1329823785
+  }
+}
